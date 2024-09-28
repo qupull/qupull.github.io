@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>趣谱网络 - 首页</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>趣谱网络</h1>
+            <nav>
+                <ul>
+                    <li style="margin-left: 0;"><a href="#about">关于我们</a></li>
+                    <li><a href="#services">服务</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>让技术更有趣</h2>
+                <p>我们专注于创造富有创意的网络解决方案，助力您的业务发展。</p>
+                <a href="#services" class="btn">了解更多</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>关于我们</h2>
+                <p>趣谱网络是一家领先的技术公司，致力于提供创新的互联网解决方案。我们的团队由经验丰富的专业人士组成，帮助客户实现他们的目标。</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>我们的服务</h2>
+                <ul>
+                    <li>网站开发</li>
+                    <li>移动应用开发</li>
+                    <li>数字营销</li>
+                    <li>用户体验设计</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>我们的项目</h2>
+                <p>Coming soon</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>联系我们</h2>
+                <p>如果您有任何问题或想要合作，请联系我们：</p>
+                <p>Email: contact@qupu.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2019 - <span id="currentYear"></span> 趣谱网络. 保留所有权利.
+                <a style="word-wrap: break-word;word-break: keep-all;" href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022036612号-1</a>
+            </p>
+        </div>
+    </footer>
+</body>
+<script>
+    // 设置当前年份
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentYear').textContent = currentYear;
+
+    // 平滑滚动效果
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</html>
